@@ -30,14 +30,15 @@ do
             echo "Result = $result"
             ;;
         4)  echo "***** Division *****"
-            if [ "$num2" -ne 0 ]; then
+            if [ "$num2" -ne 0 ]; 
+            then
                 result=`echo "scale=2; $num1 / $num2" | bc`
                 echo "Result = $result"
             else
                 echo "Error: Division by zero"
             fi
             ;;
-        5)   echo "Exited"
+        5)  echo "Exited"
             exit 0
             ;;
         *)  echo "Invalid choice"
