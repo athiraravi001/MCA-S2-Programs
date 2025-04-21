@@ -74,6 +74,7 @@ class BookCategoryDetails
 		System.out.println("Enter category(Literature/Fiction) : ");
 		String category = sc.nextLine();
 		System.out.println("===== Book Details =====");
+		
                 if (category.equalsIgnoreCase("Literature")) 
                 {
                        Literature literatureBook = new Literature(publisher_name, title, author, category);
