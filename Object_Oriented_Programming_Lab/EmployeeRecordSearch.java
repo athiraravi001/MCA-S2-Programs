@@ -24,7 +24,7 @@ class EmployeeRecordSearch
 		Employee[] emp = new Employee[count];
 		for (i = 0; i < count; i++)
 		{
-            System.out.println("----- Enter details of employee " + (i + 1) + " -----");
+                        System.out.println("----- Enter details of employee " + (i + 1) + " -----");
 			System.out.print("Employee number :");
 			String eNo = sc.nextLine();
 			System.out.print("Employee name :");
@@ -39,14 +39,14 @@ class EmployeeRecordSearch
 		{
 			if(emp[i].eNo.equals(search))
 			{
-                System.out.println("Employee found");
+                                System.out.println("Employee found");
 				System.out.println("Employee number : "+emp[i].eNo);
 				System.out.println("Employee name : "+emp[i].eName);
 				System.out.println("Employee salary : "+emp[i].eSalary);
 				break;
 			}
 		}
-		if (i ==count)
+		if (i == count)
 		{
 			System.out.println("Employee not found");
 		}
