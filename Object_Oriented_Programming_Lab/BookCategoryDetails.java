@@ -74,19 +74,19 @@ class BookCategoryDetails
 		System.out.println("Enter category(Literature/Fiction) : ");
 		String category = sc.nextLine();
 		System.out.println("===== Book Details =====");
-        if (category.equalsIgnoreCase("Literature")) 
-        {
-            Literature literatureBook = new Literature(publisher_name, title, author, category);
-            literatureBook.display();
-        } 
-        else if (category.equalsIgnoreCase("Fiction")) 
-        {
-            Fiction fictionBook = new Fiction(publisher_name, title, author, category);
-            fictionBook.display();
-        } 
-        else 
-        {
-            System.out.println("Invalid category! Please enter either 'Literature' or 'Fiction'.");
+                if (category.equalsIgnoreCase("Literature")) 
+                {
+                       Literature literatureBook = new Literature(publisher_name, title, author, category);
+                       literatureBook.display();
+                } 
+                else if (category.equalsIgnoreCase("Fiction")) 
+                {
+                       Fiction fictionBook = new Fiction(publisher_name, title, author, category);
+                       fictionBook.display();
+                } 
+                else 
+                {
+                       System.out.println("Invalid category! Please enter either 'Literature' or 'Fiction'.");
+                }
         }
-    }
 }		
