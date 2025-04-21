@@ -22,7 +22,7 @@ class Book extends Publisher
 		this.title = title;
 		this.author = author;
 	}
-    void display()
+        void display()
 	{
 		super.display();
 		System.out.println("Title : "+title);
