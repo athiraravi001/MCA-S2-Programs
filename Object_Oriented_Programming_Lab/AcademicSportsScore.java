@@ -14,10 +14,10 @@ class Student
 class Sports
 {
 	String sports_name;
-    int sports_score;
+        int sports_score;
 	Sports(String sports_name, int sports_score)
 	{
-        this.sports_name = sports_name;
+                this.sports_name = sports_name;
 		this.sports_score = sports_score;
 	}
 }
@@ -28,14 +28,14 @@ class Result extends Student
 	Result(String student_name,int academic_score,String sports_name,int sports_score)
 	{
 		super(student_name, academic_score);
-        this.s = new Sports(sports_name, sports_score);
+                this.s = new Sports(sports_name, sports_score);
 	}
 	void display()
 	{
-        System.out.println("===== Score Details =====");
+                System.out.println("===== Score Details =====");
 		System.out.println("Student Name : "+this.student_name);
 		System.out.println("Academic Score : "+this.academic_score);
-        System.out.println("Sports Name : "+this.s.sports_name);
+                System.out.println("Sports Name : "+this.s.sports_name);
 		System.out.println("Sports Score : "+this.s.sports_score);
 	}
 }
@@ -49,7 +49,7 @@ class AcademicSportsScore
 		String student_name = sc.nextLine();
 		System.out.println("Enter academic score : ");
 		int academic_score = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter sports name : ");
+                System.out.println("Enter sports name : ");
 		String sports_name = sc.nextLine();
 		System.out.println("Enter sports score : ");
 		int sports_score = Integer.parseInt(sc.nextLine());
