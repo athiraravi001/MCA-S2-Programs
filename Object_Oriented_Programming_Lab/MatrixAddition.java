@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class MatrixAddition 
+public class MatrixAddition 
 { 
     static void showMatrix(int m[][], int row, int col) 
     {
@@ -16,10 +16,10 @@ class MatrixAddition
     {
         int r1, c1, r2, c2, i, j;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the row and column size of 1st matrix :");
+        System.out.print("Enter the row and column size of 1st matrix : ");
         r1 = sc.nextInt();
         c1 = sc.nextInt();    
-        System.out.println("Enter the row and column size of 2nd matrix :");
+        System.out.print("Enter the row and column size of 2nd matrix : ");
         r2 = sc.nextInt();
         c2 = sc.nextInt();
         if (r1 == r2 && c1 == c2) 
