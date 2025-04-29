@@ -7,7 +7,7 @@ class ArrayElementSearch
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the array size : ");
         int n = sc.nextInt();
-        int [] arr = new int[n];
+        int[] arr = new int[n];
         System.out.print("Enter the array elements : ");
         for (int i = 0; i < n; i++) 
         {
