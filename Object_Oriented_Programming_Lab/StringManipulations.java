@@ -14,9 +14,9 @@ public class StringManipulations
 		System.out.println("Length of 1st string : "+str1.length());
 		System.out.println("Length of 2nd string : "+str2.length());
 
-        //Change lettercase
-        System.out.println("Lowercase : " + str1.toLowerCase());
-        System.out.println("Uppercase : " + str1.toUpperCase());
+                //Change lettercase
+                System.out.println("Lowercase : " + str1.toLowerCase());
+                System.out.println("Uppercase : " + str1.toUpperCase());
 
 		//String concatenation
 		String concatenated = str1.concat(str2);
@@ -32,17 +32,17 @@ public class StringManipulations
 			System.out.println("Both are different");
 		} 
 
-        //Number to string
-        int number = 12345;
-        String numStr = Integer.toString(number);
-        System.out.println("Number as string : " + numStr);
+                //Number to string
+                int number = 12345;
+                String numStr = Integer.toString(number);
+                System.out.println("Number as string : " + numStr);
 
-        //Trim the leading and trailing blank spaces
-        String trimmed = concatenated.trim();
-        System.out.println("Trimmed string : \"" + trimmed + "\"");
+                //Trim the leading and trailing blank spaces
+                String trimmed = concatenated.trim();
+                System.out.println("Trimmed string : \"" + trimmed + "\"");
 
-        //Index of a character in a string
-        System.out.println("Index of character 'a' in first string : " + str1.indexOf('a'));
+                //Index of a character in a string
+                System.out.println("Index of character 'a' in first string : " + str1.indexOf('a'));
 
 		//Extracting a substring
 		System.out.println("Substring of first string(0 to 3) : "+str1.substring(0,3));
