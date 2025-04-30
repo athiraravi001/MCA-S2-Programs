@@ -16,7 +16,7 @@ public class EmployeeSearch
 {
 	public static void main(String args[])
 	{
-	    int count, i;
+	        int count, i;
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter number of employeees : ");
 		count = Integer.parseInt(sc.nextLine()); 
@@ -49,6 +49,6 @@ public class EmployeeSearch
 		{
 			System.out.println("Employee not found");
 		}
-        sc.close();
+                sc.close();
 	}
 }   
