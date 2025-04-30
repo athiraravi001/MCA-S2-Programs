@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class StringManipulations
 {
-	public static void main(String arg[])
+	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the first string : ");
