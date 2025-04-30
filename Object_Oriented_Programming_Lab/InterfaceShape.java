@@ -1,13 +1,11 @@
 //Create an interface having prototypes of functions area() and perimeter(). Create two classes Circle and Rectangle which implements the above interface. Create a menu driven program to find area and perimeter of objects.
 
 import java.util.Scanner;
-
 interface Shape
 {
 	void area();
 	void perimeter();
 }
-
 class Circle implements Shape
 {
 	double radius;
@@ -26,7 +24,6 @@ class Circle implements Shape
 		System.out.println("Perimeter of circle = "+perimeter);
 	}
 }
-
 class Rectangle implements Shape
 {
 	int length, breadth;
@@ -46,32 +43,31 @@ class Rectangle implements Shape
 		System.out.println("Perimeter of rectangle = "+perimeter);
 	}
 }
-
 public class InterfaceShape
 {
 	public static void main(String args[])
 	{
-        int choice;
+                int choice;
 		Scanner sc = new Scanner(System.in);
-        do
-        {
-            System.out.println("Choose an option :-");
+                do
+                {
+                    System.out.println("Choose an option :-");
 		    System.out.println("1 : Circle");
 		    System.out.println("2 : Rectangle");
 		    System.out.println("3 : Exit");
 		    System.out.print("Enter your choice : ");
 		    choice = sc.nextInt();
-            switch(choice)
-            {
-                case 1 : System.out.println("\n----- Circle -----");
-			             System.out.print("Enter the radius of the circle : ");
-					     double radius = sc.nextDouble();
-					     Circle c = new Circle(radius);
-					     c.area();
-					     c.perimeter();
-                         System.out.println();
-					     break;
-			    case 2 : System.out.println("\n----- Rectangle -----");
+                    switch(choice)
+                    {
+                          case 1 : System.out.println("\n----- Circle -----");
+			     System.out.print("Enter the radius of the circle : ");
+			     double radius = sc.nextDouble();
+			     Circle c = new Circle(radius);
+			     c.area();
+			     c.perimeter();
+                             System.out.println();
+			     break;
+		case 2 : System.out.println("\n----- Rectangle -----");
 			             System.out.print("Enter the length of the rectangle : ");
 					     int length = sc.nextInt();
 					     System.out.print("Enter the breadth of the rectangle : ");
