@@ -56,37 +56,37 @@ public class InterfaceShape
         do
         {
             System.out.println("Choose an option :-");
-		    System.out.println("1 : Circle");
-		    System.out.println("2 : Rectangle");
-		    System.out.println("3 : Exit");
-		    System.out.print("Enter your choice : ");
-		    choice = sc.nextInt();
+	    System.out.println("1 : Circle");
+	    System.out.println("2 : Rectangle");
+	    System.out.println("3 : Exit");
+	    System.out.print("Enter your choice : ");
+	    choice = sc.nextInt();
             switch(choice)
             {
                 case 1 : System.out.println("\n----- Circle -----");
-			             System.out.print("Enter the radius of the circle : ");
-					     double radius = sc.nextDouble();
-					     Circle c = new Circle(radius);
-					     c.area();
-					     c.perimeter();
+			 System.out.print("Enter the radius of the circle : ");
+			 double radius = sc.nextDouble();
+			 Circle c = new Circle(radius);
+			 c.area();
+			 c.perimeter();
                          System.out.println();
-					     break;
-			    case 2 : System.out.println("\n----- Rectangle -----");
-			             System.out.print("Enter the length of the rectangle : ");
-					     int length = sc.nextInt();
-					     System.out.print("Enter the breadth of the rectangle : ");
-					     int breadth = sc.nextInt();
-					     Rectangle r = new Rectangle(length,breadth);
-					     r.area();
-					     r.perimeter();
+		         break;
+		case 2 : System.out.println("\n----- Rectangle -----");
+			 System.out.print("Enter the length of the rectangle : ");
+			 int length = sc.nextInt();
+			 System.out.print("Enter the breadth of the rectangle : ");
+			 int breadth = sc.nextInt();
+			 Rectangle r = new Rectangle(length,breadth);
+			 r.area();
+			 r.perimeter();
                          System.out.println();
-					     break;
-			    case 3 : System.out.println("Exiting the program...");
+			 break;
+		case 3 : System.out.println("Exiting the program...");
                          break;
-		        default : System.out.println("Invalid choice!");
+		default : System.out.println("Invalid choice!");
             }
         }
         while (choice !=3);
-		sc.close();
+	sc.close();
 	}
 }
