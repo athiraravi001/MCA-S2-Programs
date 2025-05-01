@@ -49,8 +49,8 @@ class Rectangle implements Shape
 
 public class InterfaceShape
 {
-	public static void main(String args[])
-	{
+     public static void main(String args[])
+     {
         int choice;
 	Scanner sc = new Scanner(System.in);
         do
@@ -85,8 +85,8 @@ public class InterfaceShape
                          break;
 		default : System.out.println("Invalid choice!");
             }
-        }
-        while (choice !=3);
-	sc.close();
+         }
+         while (choice !=3);
+	 sc.close();
 	}
 }
