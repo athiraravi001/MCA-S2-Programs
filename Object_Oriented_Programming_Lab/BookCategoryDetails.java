@@ -62,7 +62,7 @@ class Fiction extends Book
 	}
 }
 
-class BookCategoryDetails
+public class BookCategoryDetails
 {
 	public static void main(String args[])
 	{
