@@ -67,14 +67,15 @@ public class BookCategoryDetails
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter book title : ");
+		System.out.print("Enter book title : ");
 		String title = sc.nextLine();
-		System.out.println("Enter publisher name : ");
+		System.out.print("Enter publisher name : ");
 		String publisher_name = sc.nextLine();
-		System.out.println("Enter author name : ");
+		System.out.print("Enter author name : ");
 		String author = sc.nextLine();
-		System.out.println("Enter category(Literature/Fiction) : ");
+		System.out.print("Enter category(Literature/Fiction) : ");
 		String category = sc.nextLine();
+		System.out.println();
 		System.out.println("===== Book Details =====");
 		
                 if (category.equalsIgnoreCase("Literature")) 
