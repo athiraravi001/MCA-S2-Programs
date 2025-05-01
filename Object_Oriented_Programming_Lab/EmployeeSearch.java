@@ -18,7 +18,7 @@ public class EmployeeSearch
 	{
 	        int count, i;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter number of employeees : ");
+		System.out.print("Enter number of employees : ");
 		count = Integer.parseInt(sc.nextLine()); 
 		Employee[] emp = new Employee[count];
 		for (i = 0; i < count; i++)
