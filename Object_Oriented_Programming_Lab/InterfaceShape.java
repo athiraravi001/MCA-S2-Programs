@@ -52,7 +52,7 @@ public class InterfaceShape
 	public static void main(String args[])
 	{
         int choice;
-		Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
         do
         {
             System.out.println("Choose an option :-");
