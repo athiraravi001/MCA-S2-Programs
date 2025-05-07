@@ -38,10 +38,8 @@ public class PositiveIntegerAverage
             {
                 sum += numbers[i];
             }
-
             float average = (float) sum / count;
             System.out.println("Average of the given numbers is " + average);
-
         } 
 
         catch (NegativeNumberException e) 
