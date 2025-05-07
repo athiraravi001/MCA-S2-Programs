@@ -19,6 +19,7 @@ public class MainGraphicsPackage
             System.out.println("3 : Rectangle");
             System.out.println("4 : Triangle");
             System.out.println("5 : Exit");
+            System.out.print("Enter your choice : ")
             choice = sc.nextInt();
             switch(choice)
             {
