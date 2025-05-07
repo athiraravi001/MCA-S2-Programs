@@ -1,5 +1,4 @@
 package Graphics;
-import java.util.Scanner;
 public class Rectangle implements Shapes
 {
     int length, breadth;
