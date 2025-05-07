@@ -1,5 +1,4 @@
 package Graphics;
-import java.util.Scanner;
 public class Circle implements Shapes
 {
     double radius;
