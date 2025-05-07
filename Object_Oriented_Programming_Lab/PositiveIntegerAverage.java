@@ -34,7 +34,8 @@ public class PositiveIntegerAverage
             }
 
             int sum = 0;
-            for (int i = 0; i < count; i++) {
+            for (int i = 0; i < count; i++) 
+            {
                 sum += numbers[i];
             }
 
