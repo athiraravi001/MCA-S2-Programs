@@ -21,7 +21,7 @@ public class PositiveIntegerAverage
 
         try 
         {
-            System.out.print("Enter " + count + " positive numbers: ");
+            System.out.print("Enter " + count + " numbers : ");
 
             for (int i = 0; i < count; i++) 
             {
