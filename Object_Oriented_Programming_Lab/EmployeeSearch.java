@@ -38,7 +38,7 @@ public class EmployeeSearch
 		{
 			if(emp[i].eNo.equals(search_empnum))
 			{
-			    System.out.println("-------- Employee Details --------");
+			        System.out.println("-------- Employee Details --------");
 				System.out.println("Employee number : "+emp[i].eNo);
 				System.out.println("Employee name : "+emp[i].eName);
 				System.out.println("Employee salary : "+emp[i].eSalary);
