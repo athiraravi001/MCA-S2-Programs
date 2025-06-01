@@ -108,7 +108,7 @@ do
       echo "----- Count occurrences of a substring -----"
       read -p "Enter the main string : " str
       read -p "Enter the substring to count : " substr
-      count=$(grep -o "$substr" <<< "$str" | wc -l)
+      count=$(echo "$str" | grep -o "$substr" | wc -l)
       echo "Occurrences of '$substr' in the string : $count"
       ;;
     13)
