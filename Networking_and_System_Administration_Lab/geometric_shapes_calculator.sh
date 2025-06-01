@@ -25,8 +25,8 @@ do
             area=$(echo "3.14 * $r * $r" | bc)  
             # Perimeter (Circumference) = 2 * π * r     
             perimeter=$(echo "2 * 3.14 * $r" | bc)
-            echo "Area of Circle: $area"
-            echo "Perimeter of Circle: $perimeter"
+            echo "Area of Circle : $area"
+            echo "Perimeter of Circle : $perimeter"
             ;;
         2)
              echo "---------- Rectangle ----------"
@@ -36,8 +36,8 @@ do
             area=$(echo "$l * $b" | bc)
             # Perimeter = 2 * (length + breadth)
             perimeter=$(echo "2 * ($l + $b)" | bc)
-            echo "Area of Rectangle: $area"
-            echo "Perimeter of Rectangle: $perimeter"
+            echo "Area of Rectangle : $area"
+            echo "Perimeter of Rectangle : $perimeter"
             ;;
         3)
             echo "---------- Square ----------"
@@ -130,8 +130,8 @@ do
             volume=$(echo "$l * $w * $h" | bc)
             # Surface Area = 2 * (lw + lh + wh)
             surface_area=$(echo "2 * ($l * $w + $l * $h + $w * $h)" | bc)
-            echo "Volume of Cuboid: $volume"
-            echo "Surface Area of Cuboid: $surface_area"
+            echo "Volume of Cuboid : $volume"
+            echo "Surface Area of Cuboid : $surface_area"
             ;;
         11)
             echo "---------- Cylinder ----------"
@@ -154,8 +154,8 @@ do
             volume=$(echo "scale=2; (1/3) * 3.14 * $r * $r * $h" | bc)
             # Surface Area = π * r * (r + l)
             surface_area=$(echo "3.14 * $r * ($r + $slant_height)" | bc)
-            echo "Volume of Cone: $volume"
-            echo "Surface Area of Cone: $surface_area"
+            echo "Volume of Cone : $volume"
+            echo "Surface Area of Cone : $surface_area"
             ;;
         13)
             echo "Exiting the program!"
