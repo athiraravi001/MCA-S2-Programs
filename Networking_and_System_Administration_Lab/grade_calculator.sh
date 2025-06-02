@@ -19,3 +19,36 @@ then
 else
     echo "Grade : Failed"
 fi
+
+
+#------------------------------ OR ------------------------------
+
+
+# Calculate the grade of a student by accepting 3 marks out of 100 using command line argument.
+
+if [ $# -ne 3 ]
+then
+  echo "Enter exactly 3 marks out of 100"
+  exit 1
+fi
+
+m1=$1
+m2=$2
+m3=$3
+
+avg=$(( (m1 + m2 + m3) / 3 ))
+
+if [ $avg -ge 90 ]; then
+  grade="A"
+elif [ $avg -ge 80 ]; then
+  grade="B"
+elif [ $avg -ge 70 ]; then
+  grade="C"
+elif [ $avg -ge 60 ]; then
+  grade="D"
+else
+  grade="F"
+fi
+
+echo "Average : $avg"
+echo "Grade : $grade"
