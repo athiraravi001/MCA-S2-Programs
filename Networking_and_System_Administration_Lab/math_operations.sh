@@ -45,7 +45,7 @@ do
                 is_prime=1
                 for (( i=2; i*i<=num; i++ ))
                 do
-                    if [ $((num % i)) -eq 0 ]
+                    if (( num % i == 0 ))
                     then
                         is_prime=0
                         break
