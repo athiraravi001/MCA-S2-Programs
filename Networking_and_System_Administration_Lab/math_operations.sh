@@ -93,9 +93,9 @@ do
             echo "Fibonacci series up to $terms terms:"
             for (( i=0; i<terms; i++ )); do
                 echo -n "$a "
-                fn=$((a + b))
+                temp=$((a + b))
                 a=$b
-                b=$fn
+                b=$temp
             done
             echo
             ;;
