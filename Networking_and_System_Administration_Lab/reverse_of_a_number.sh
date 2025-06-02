@@ -1,4 +1,4 @@
-echo "Enter a number:"
+echo "Enter a number :"
 read number
 
 reverse=0
@@ -11,3 +11,20 @@ do
 done
 
 echo "Reversed number is $reverse"
+
+
+#------------------------------ OR ------------------------------
+
+
+# Reverse 5-digit number
+
+read -p "Enter a five-digit integer : " num
+
+if [ "$num" -ge 10000 ] && [ "$num" -le 99999 ]
+then
+    echo "Valid five-digit integer."
+    reversed=$(echo "$num" | rev)
+    echo "Reversed number : $reversed"
+else
+    echo "Invalid input"
+fi
