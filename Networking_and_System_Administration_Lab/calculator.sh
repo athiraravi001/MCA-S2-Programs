@@ -18,21 +18,21 @@ do
 
     case $choice in
         1)  echo "***** Addition *****"
-            result=`expr $num1 + $num2`
+            result=`expr $num1 + $num2`               # result=$(( num1 + num2 ))
             echo "Result = $result"
             ;;
         2)  echo "***** Subtraction *****"
-            result=`expr $num1 - $num2`
+            result=`expr $num1 - $num2`               # result=$(( num1 - num2 ))
             echo "Result = $result"
             ;;
         3)  echo "***** Multiplication *****"
-            result=`expr $num1 \* $num2`
+            result=`expr $num1 \* $num2`              # result=$(( num1 * num2 ))
             echo "Result = $result"
             ;;
         4)  echo "***** Division *****"
             if [ "$num2" -ne 0 ]
             then
-                result=`echo "scale=2; $num1 / $num2" | bc`
+                result=`echo "scale=2; $num1 / $num2" | bc`            # result=$(( num1 / num2 )) for integer division           # result=$(echo "scale=2; $num1 / $num2" | bc) for floating point division
                 echo "Result = $result"
             else
                 echo "Error: Division by zero"
