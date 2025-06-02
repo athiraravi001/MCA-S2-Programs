@@ -29,7 +29,7 @@ do
             echo "Perimeter of Circle : $perimeter"
             ;;
         2)
-             echo "---------- Rectangle ----------"
+            echo "---------- Rectangle ----------"
             read -p "Enter length : " l
             read -p "Enter breadth : " b
             # Area = length * breadth
