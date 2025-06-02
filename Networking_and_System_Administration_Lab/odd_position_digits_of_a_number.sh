@@ -1,7 +1,7 @@
-echo "Enter a five digit number : "
+echo -n "Enter a five-digit number: "
 read num
 
-if [[ $num =~ ^[0-9]{5}$ ]]
+if [ "$num" -ge 10000 ] && [ "$num" -le 99999 ]     # Alternatively : if [[ $num =~ ^[0-9]{5}$ ]]
 then
   echo "Valid 5-digit number"
 
