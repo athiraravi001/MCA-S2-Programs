@@ -91,7 +91,8 @@ do
             a=0
             b=1
             echo "Fibonacci series up to $terms terms:"
-            for (( i=0; i<terms; i++ )); do
+            for (( i=0; i<terms; i++ ))
+            do
                 echo -n "$a "
                 temp=$((a + b))
                 a=$b
