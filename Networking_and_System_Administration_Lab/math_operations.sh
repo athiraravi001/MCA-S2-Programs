@@ -60,7 +60,7 @@ do
             fi
             ;;
         3)
-            echo "----- Palindrome number or not----- "
+            echo "----- Palindrome number or not ----- "
             # read -p "Enter a number : " n
             # rev_num=$(echo "$n" | rev) 
             # if [ "$n" = "$rev_num" ]
