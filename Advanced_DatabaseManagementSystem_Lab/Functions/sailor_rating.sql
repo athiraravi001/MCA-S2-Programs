@@ -13,6 +13,6 @@ sql> declare
         rating number;
      begin
         rating := get_rating(sid);
-        dbms_output.put_line('rating : ' || rating);
+        dbms_output.put_line('Rating : ' || rating);
      end;
      /
