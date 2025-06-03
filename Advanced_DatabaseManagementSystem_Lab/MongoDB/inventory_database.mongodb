@@ -1,0 +1,115 @@
+use Inventory
+
+db.createCollection("orders")
+
+db.orders.insertMany([
+    {custid: 200, name: "Maya", item: "Rice", price: 340},
+    {custid: 201, name: "Manu", item: "Rice", price: 340},
+    {custid: 202, name: "Meera", item: "Sugar", price: 150},
+    {custid: 202, name: "Meera", item: "Wheat", price: 250},
+    {custid: 200, name: "Maya", item: "Wheat", price: 250}
+  ])
+
+db.orders.find()
+
+/* -------------------------- OUTPUT --------------------------
+[ 
+ {
+    _id: ObjectId('6828432f108d63e389f18a7d'),
+    custid: 200,
+    name: 'Maya',
+    item: 'Rice',
+    price: 340
+ },
+
+ {
+    _id: ObjectId('6828432f108d63e389f18a7e'),
+    custid: 201,
+    name: 'Manu',
+    item: 'Rice',
+    price: 340
+ },
+
+ {
+    _id: ObjectId('6828432f108d63e389f18a7f'),
+    custid: 202,
+    name: 'Meera',
+    item: 'Sugar',
+    price: 150
+ },
+
+ {
+    _id: ObjectId('6828432f108d63e389f18a80'),
+    custid: 202,
+    name: 'Meera',
+    item: 'Wheat',
+    price: 250
+ },
+
+ {
+    _id: ObjectId('6828432f108d63e389f18a81'),
+    custid: 200,
+    name: 'Maya',
+    item: 'Wheat',
+    price: 250
+ }
+]
+*/
+
+
+// ========================= Calculate the total price of all items purchased by each customer using the MapReduce operation =========================
+
+
+var mapFunction = function() { emit(this.custid, this.price); };
+
+var reduceFunction = function(key, values) { return Array.sum(values); };
+
+db.orders.mapReduce(mapFunction, reduceFunction, { out: "map_example" });
+
+/* -------------------------- MAP REDUCE RESULT --------------------------
+{ result: 'map_example', ok: 1 }
+*/
+
+db.map_example.find();
+
+/* -------------------------- FINAL OUTPUT --------------------------
+[ 
+ {
+    _id: 201,
+    value: 340
+ },
+
+ {
+    _id: 202,
+    value: 400
+ },
+
+ {
+    _id: 200,
+    value: 590
+ }
+]
+*/
+
+
+// ========================= Find the average price of items purchased by customers whose custid is greater than 201 using the MapReduce operation =========================
+
+
+var mapFunction = function() { emit(this.custid, this.price); };
+
+var reduceFunction = function(key, values) { return Array.avg(values); };
+
+db.orders.mapReduce(mapFunction, reduceFunction, { query: { custid: { $gt: 201 } }, out: "map_example" });
+
+/* -------------------------- MAP REDUCE RESULT --------------------------
+{ result: 'map_example', ok: 1 }
+*/
+
+db.map_example.find();
+
+/* -------------------------- FINAL OUTPUT --------------------------
+{
+   _id: 202,
+   value: 200
+} 
+*/
