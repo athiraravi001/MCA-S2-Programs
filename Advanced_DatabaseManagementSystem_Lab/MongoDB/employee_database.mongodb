@@ -1,0 +1,428 @@
+> use Employee
+
+> db.createCollection("empDetails")
+
+> db.empDetails.insertMany([
+     {name: "Bhuvan", age: 30, email: "bhuvan@gps.com", salary: 5000},
+     {name: "Mohan", age: 32, email: "mohan@gps.com", salary: 4000},
+     {name: "Raju", age: 29, email: "raju@gps.com", salary: 6000},
+     {name: "Manu", age: 29, email: "manu@gps.com", salary: 5500},
+     {name: "Ram", age: 31, email: "ram@gps.com", salary: 4500}
+   ])
+
+> db.empDetails.find()
+
+[
+  {
+    _id: ObjectId('68277bca48be362cb19a493e'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a493f'),
+    name: 'Mohan',
+    age: 32,
+    email: 'mohan@gps.com',
+    salary: 4000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4940'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4941'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4942'),
+    name: 'Ram',
+    age: 31,
+    email: 'ram@gps.com',
+    salary: 4500
+  }
+]
+
+// ------------ Find the details of employee whose name is Mohan ------------
+
+> db.empDetails.findOne({name: "Mohan"})
+
+{
+  _id: ObjectId('68277bca48be362cb19a493f'),
+  name: 'Mohan',
+  age: 32,
+  email: 'mohan@gps.com',
+  salary: 4000
+}
+
+// ------------ Fetch the documents of employees whose salary >=5000 ------------ 
+
+> db.empDetails.find({salary: {$gte: 5000}})
+
+[
+  {
+    _id: ObjectId('68277bca48be362cb19a493e'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4940'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4941'),
+    name: 'Manu',
+    age: 29,
+   email: 'manu@gps.com',
+    salary: 5500
+  }
+]
+
+// ------------ Find the documents of employees whose name starts with letter R ------------ 
+
+> db.empDetails.find({ name: /^R/ })
+
+[
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4942'),
+    name: 'Ram',
+    age: 31,
+    email: 'ram@gps.com',
+    salary: 4500
+  }
+]
+
+// ------------ Find the documents of employees whose name is not in Mohan , Raju, Bhuvan ------------ 
+
+> db.empDetails.find({ name: { $nin: ["Mohan", "Raju", "Bhuvan"] } })
+
+[
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500
+  },
+  {
+    _id: ObjectId('68277bca48be362cb19a4942'),
+    name: 'Ram',
+    age: 31,
+    email: 'ram@gps.com',
+    salary: 4500
+  }
+]
+
+// ------------ Find the documents of employees whose names are Mohan , Raju, Bhuvan ------------
+
+> db.empDetails.find({ name: { $in: ["Mohan", "Raju", "Bhuvan"] } })
+
+[
+  {
+    _id: ObjectId('682780991d45a0808d8d8e69'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000
+  },
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6a'),
+    name: 'Mohan',
+    age: 32,
+    email: 'mohan@gps.com',
+    salary: 4000
+  },
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000
+  }  
+]
+
+
+// ------------ Retrieve the details of employees whose age is less than 30 and display only the fields name, salary ------------
+
+> db.empDetails.find({ age: { $lt: 30 } }, { name: 1, salary: 1 })
+
+[
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    salary: 6000
+  },
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    salary: 5500
+  }
+]
+
+// ------------ Find the details of employees whose salary is >5000 and age is <30 ------------
+
+> db.empDetails.find({ $and: [ { age: { $lt: 30 } }, { salary: { $gt: 5000 } } ] })
+
+[
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000
+  },
+  {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500
+  }
+]
+
+// ------------ Update the e-mail of employee whose name is Mohan using findOneAndUpdate() ------------
+
+> db.empdetails.findOneAndUpdate({name:"Mohan"},{$set:{email:"neil@gps.com"}})
+
+{
+  _id: ObjectId('682780991d45a0808d8d8e6a'),
+  name: 'Mohan',
+  age: 32,
+  email: 'neil@gps.com',
+  salary: 4000
+}
+
+// ------------ Delete all the documents of employees whose age >56 ------------
+
+> db.empDetails.deleteMany({age: {$gt: 56}})
+
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+
+// ------------ Update document by adding a department field ------------
+
+> db.empDetails.updateOne({name: "Bhuvan"}, {$set: {dept: "Developer"}})
+
+> db.empDetails.updateOne({name: "Mohan"}, {$set: {dept: "Designer"}})
+
+> db.empDetails.updateOne({name: "Manu"}, {$set: {dept: "Designer"}})
+
+> db.empDetails.updateOne({name: "Raju"}, {$set: {dept: "Tester"}})
+
+> db.empDetails.updateOne({name: "Ram"}, {$set: {dept: "Tester"}})
+
+> db.empDetails.find()
+
+[
+ {
+    _id: ObjectId('682780991d45a0808d8d8e69'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000,
+    dept: 'Developer'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6a'),
+    name: 'Mohan',
+    age: 32,
+    email: 'neil@gps.com',
+    salary: 4000,
+    dept: 'Designer'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000,
+    dept: 'Tester'
+  },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500,
+    dept: 'Designer'
+ }
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500,
+    dept: 'Designer'
+ }
+]
+
+// ------------ Find the average salary of each department ------------
+
+> db.empDetails.aggregate([{$group:{_id:"$dept", Avg_Salary:{$avg:"$salary"}}}])
+
+[
+ {
+    _id: 'Developer',
+    Avg_Salary: 5000
+ },
+ {
+    _id: 'Designer',
+    Avg_Salary: 4750
+ },
+ {
+    _id: 'Tester',
+    Avg_Salary: 5250
+ }
+]
+
+// ------------ Find the minimum salary of each department ------------
+
+> db.empDetails.aggregate([{$group:{_id:"$dept", "Min_Salary": {$min:"$salary"}}}])
+
+[
+ {
+    _id: 'Developer',
+    Min_Salary: 5000
+ },
+ {
+    _id: 'Designer',
+    Min_Salary: 4000
+ },
+ {
+    _id: 'Tester',
+    Min_Salary: 4500
+ }
+]
+
+// ------------ Find the maximum salary of each department ------------
+
+> db.empDetails.aggregate([{$group:{_id:"$dept", "Max_Salary": {$max:"$salary"}}}])
+
+[
+ {
+    _id: 'Developer',
+    Max_Salary: 5000
+ },
+ {
+    _id: 'Designer',
+    Max_Salary: 5500
+ },
+ {
+    _id: 'Tester',
+    Max_Salary: 6000
+ }
+]
+
+// ------------ Find the number of employees in each department ------------
+
+> db.empDetails.aggregate([{$group:{_id:"$dept", "Number of Employees": {$sum: 1}}}])
+
+[ 
+ {
+    _id: 'Tester',
+    'Number of Employees': 2
+ },
+ {
+    _id: 'Developer',
+    'Number of Employees': 1
+ },
+ {
+    _id: 'Designer',
+    'Number of Employees': 2
+ }
+]
+
+// ------------ Sort the collection in descending order of name ------------
+
+> db.empDetails.find().sort({name: -1})
+
+[ 
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6d'),
+    name: 'Ram',
+    age: 31,
+    email: 'ram@gps.com',
+    salary: 4500,
+    dept: 'Tester'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6b'),
+    name: 'Raju',
+    age: 29,
+    email: 'raju@gps.com',
+    salary: 6000,
+    dept: 'Tester'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6a'),
+    name: 'Mohan',
+    age: 32,
+    email: 'neil@gps.com',
+    salary: 4000,
+    dept: 'Designer'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6c'),
+    name: 'Manu',
+    age: 29,
+    email: 'manu@gps.com',
+    salary: 5500,
+    dept: 'Designer'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e69'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000,
+    dept: 'Developer'
+ }
+]
+
+// ------------ Create a text index for 'name' and search for names Mohan and Bhuvan ------------
+
+> db.empDetails.createIndex({ name: "text" })
+
+< name_text
+
+> db.empDetails.find({ $text: { $search: "Mohan Bhuvan" }})
+
+[
+ {
+    _id: ObjectId('682780991d45a0808d8d8e69'),
+    name: 'Bhuvan',
+    age: 30,
+    email: 'bhuvan@gps.com',
+    salary: 5000,
+    dept: 'Developer'
+ },
+ {
+    _id: ObjectId('682780991d45a0808d8d8e6a'),
+    name: 'Mohan',
+    age: 32,
+    email: 'neil@gps.com',
+    salary: 4000,
+    dept: 'Designer'
+ }
+]
