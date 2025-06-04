@@ -66,7 +66,7 @@ sql> select sum(rating) as sum_rating from sailors;
  sum_rating
  ----------
  66
-*?
+*/
 
 -- 8) To find sum of distinct age of sailors (Duplicate ages are eliminated)
 
