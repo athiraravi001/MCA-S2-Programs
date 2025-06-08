@@ -1,3 +1,5 @@
+// Create classes Student and Sports. Create another class Result inherited from Student and Sports. Display the academic and sports score of a student.
+
 import java.util.Scanner;
 
 class Student
