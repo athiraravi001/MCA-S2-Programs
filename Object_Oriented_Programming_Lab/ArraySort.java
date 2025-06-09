@@ -6,19 +6,23 @@ class ArraySort
         int a[] = new int[50];
         int n, i, j;
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("Enter the size of an array : ");
         n = sc.nextInt();
+        
         System.out.println("Enter the elements : ");
         for (i = 0; i < n; i++)
         {
             a[i] = sc. nextInt();
         }
+        
         System.out.println("----- Array before sorting -----");
         for (i = 0; i < n; i++)
         {
             System.out.print(a[i]+" ");
         }
         System.out.println();
+        
         for (i = 0; i < n; i++)
         {
             for (j = i+1; j < n; j++)
@@ -37,6 +41,7 @@ class ArraySort
             System.out.print(a[i]+" ");
         }
         System.out.println();
+        
         for (i = 0; i < n; i++)
         {
             for (j = i+1; j < n; j++)
